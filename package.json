@@ -1,7 +1,7 @@
 {
   "name": "cms",
   "description": "Payload project created from blank template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/server.js",
   "license": "MIT",
   "scripts": {
