@@ -7,7 +7,7 @@ import Tenants from "./collections/Tenants";
 import Users from "./collections/Users";
 
 export default buildConfig({
-  serverURL: process.env.SERVER_URL || "http://localhost:3000",
+  serverURL: process.env.SERVER_URL,
   admin: {
     user: Users.slug,
   },
