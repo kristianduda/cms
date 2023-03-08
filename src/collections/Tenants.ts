@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload/types";
+import { getTenant } from "../utils/accessUtils";
 
 const Tenants: CollectionConfig = {
   slug: "tenants",
@@ -6,16 +7,13 @@ const Tenants: CollectionConfig = {
     useAsTitle: "name",
   },
   access: {
-    read: ({ req: { user } }) => {
-      if (user) {
-        return {
-          _id: {
-            equals: user.tenant.id,
-          },
-        };
-      }
-
-      return false;
+    read: ({ req }) => {
+      const tenant = getTenant({ req });
+      return {
+        _id: {
+          equals: tenant,
+        },
+      };
     },
     create: () => false,
     update: () => false,
