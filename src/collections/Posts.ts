@@ -1,6 +1,6 @@
 import { CollectionConfig } from "payload/types";
-import { createdBy } from "../fields/createdByField";
-import { tenant } from "../fields/tenantField";
+import { createdBy } from "../fields/createdBy";
+import { tenant } from "../fields/tenant";
 import { checkTenant, isAdminOrCreatedBy } from "../utils/accessUtils";
 import { addTenantAndCreatedBy } from "../utils/hooksUtils";
 

@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types";
-import { tenant } from "../fields/tenantField";
+import { tenant } from "../fields/tenant";
 import { checkTenant, isAdmin } from "../utils/accessUtils";
 import { addTenant } from "../utils/hooksUtils";
 
