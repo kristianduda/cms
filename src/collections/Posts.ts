@@ -1,6 +1,6 @@
 import { CollectionConfig } from "payload/types";
-import { CreatedBy } from "../fields/CreatedBy";
-import { Tenant } from "../fields/Tenant";
+import { createdBy } from "../fields/createdByField";
+import { tenant } from "../fields/tenantField";
 import { checkTenant, isAdminOrCreatedBy } from "../utils/accessUtils";
 import { addTenantAndCreatedBy } from "../utils/hooksUtils";
 
@@ -36,8 +36,8 @@ const Posts: CollectionConfig = {
       name: "content",
       type: "richText",
     },
-    Tenant,
-    CreatedBy,
+    tenant,
+    createdBy,
   ],
   access: {
     read: checkTenant,

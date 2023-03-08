@@ -1,6 +1,6 @@
 import { Field } from "payload/types";
 
-export const Tenant: Field = {
+export const tenant: Field = {
   name: "tenant",
   type: "relationship",
   relationTo: "tenants",

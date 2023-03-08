@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types";
-import { Tenant } from "../fields/Tenant";
+import { tenant } from "../fields/tenantField";
 import { checkTenant, isAdmin } from "../utils/accessUtils";
 import { addTenant } from "../utils/hooksUtils";
 
@@ -14,7 +14,7 @@ const Categories: CollectionConfig = {
       type: "text",
       required: true,
     },
-    Tenant,
+    tenant,
   ],
   timestamps: false,
   access: {

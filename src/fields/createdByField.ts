@@ -1,6 +1,6 @@
 import { Field } from "payload/types";
 
-export const CreatedBy: Field = {
+export const createdBy: Field = {
   name: "createdBy",
   type: "relationship",
   relationTo: "users",

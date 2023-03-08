@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types";
-import { Tenant } from "../fields/Tenant";
+import { tenant } from "../fields/tenantField";
 import { checkTenant, isAdmin } from "../utils/accessUtils";
 import { addTenant } from "../utils/hooksUtils";
 
@@ -20,7 +20,7 @@ const Users: CollectionConfig = {
       required: true,
       defaultValue: "user",
     },
-    Tenant,
+    tenant,
   ],
   access: {
     read: checkTenant,

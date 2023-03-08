@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload/types";
+import { tenant } from "../fields/tenantField";
 import { checkTenant, isAdmin } from "../utils/accessUtils";
 import { addTenant } from "../utils/hooksUtils";
 
@@ -13,6 +14,7 @@ const Tags: CollectionConfig = {
       type: "text",
       required: true,
     },
+    tenant,
   ],
   timestamps: false,
   access: {
