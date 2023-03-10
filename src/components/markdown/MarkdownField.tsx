@@ -8,9 +8,9 @@ import { useFieldType } from "payload/components/forms";
 
 // we can use existing Payload types easily
 import { Props } from "payload/components/fields/Text";
+import ReactMarkdown from "react-markdown";
 import ReactMde from "react-mde";
 import "react-mde/lib/styles/css/react-mde-all.css";
-import * as Showdown from "showdown";
 
 const MarkdownField: React.FC<Props> = (props) => {
   const { path, label, required } = props;
@@ -22,13 +22,6 @@ const MarkdownField: React.FC<Props> = (props) => {
     "write"
   );
 
-  const converter = new Showdown.Converter({
-    tables: true,
-    simplifiedAutoLink: true,
-    strikethrough: true,
-    tasklists: true,
-  });
-
   return (
     <ReactMde
       value={value}
@@ -36,7 +29,7 @@ const MarkdownField: React.FC<Props> = (props) => {
       selectedTab={selectedTab}
       onTabChange={setSelectedTab}
       generateMarkdownPreview={(markdown) =>
-        Promise.resolve(converter.makeHtml(markdown))
+        Promise.resolve(<ReactMarkdown children={markdown} />)
       }
       childProps={{
         writeButton: {
